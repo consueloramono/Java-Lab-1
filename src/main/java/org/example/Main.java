@@ -48,7 +48,7 @@ public class Main{
                 } while (query != 0);
             }
             else if(query == 2){
-                Book.ShowAllBooks(books);
+                Book.showAllBooks(books);
             }
             else if(query == 3){
                 while(true) {
@@ -56,7 +56,7 @@ public class Main{
                             "0. Покинути меню пошуку. ");
                     String QueryName = s.nextLine();
                     if(QueryName.equals("0")) break;
-                    if(Book.FindBook(books, QueryName)){
+                    if(Book.findBook(books, QueryName)){
                         break;
                     }
                 }
@@ -67,7 +67,7 @@ public class Main{
                             "0. Покинути меню видалення. ");
                     String QueryISBN = s.nextLine();
                     if(QueryISBN.equals("0")) break;
-                    if(Book.RemoveBook(books, QueryISBN)){
+                    if(Book.removeBook(books, QueryISBN)){
                         break;
                     }
                 }

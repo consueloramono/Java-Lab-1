@@ -12,7 +12,7 @@ class BookTest {
         books.add(new Book("111", "111", "111", "111"));
         books.add(new Book("222", "222", "222", "222"));
         books.add(new Book("333", "333", "333", "333"));
-        Book.ShowAllBooks(books);
+        Book.showAllBooks(books);
     }
 
     @Test
@@ -21,14 +21,14 @@ class BookTest {
         books.add(new Book("111", "111", "111", "111"));
         books.add(new Book("222", "222", "222", "222"));
         books.add(new Book("333", "333", "333", "333"));
-        Book.ShowAllBooks(books);
+        Book.showAllBooks(books);
         System.out.println("Очікування: Помилка\n" +
                 "Результат: ");
 
-        Book.FindBook(books, "123");
+        Book.findBook(books, "123");
         System.out.println("Очікування: Знайдено\n" +
                 "Результат: ");
-        Book.FindBook(books, "111");
+        Book.findBook(books, "111");
     }
 
     @Test
@@ -37,10 +37,10 @@ class BookTest {
         books.add(new Book("111", "111", "111", "111"));
         books.add(new Book("222", "222", "222", "222"));
         books.add(new Book("333", "333", "333", "333"));
-        Book.RemoveBook(books, "123");
+        Book.removeBook(books, "123");
         System.out.println("Очікування: Видалення\n" +
                 "Результат: ");
-        Book.RemoveBook(books, "111");
+        Book.removeBook(books, "111");
         System.out.println("Очікування: Помилка\n" +
                 "Результат: ");
     }

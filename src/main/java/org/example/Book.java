@@ -15,30 +15,30 @@ public class Book {
         this.year = year;
     }
 
-    public void ShowBook() {
+    public void showBook() {
         System.out.println("Name: " + this.name);
         System.out.println("Author: " + this.author);
         System.out.println("ISBN: " + this.isbn);
         System.out.println("Year: " + this.year);
     }
 
-    public static void ShowAllBooks(ArrayList<Book> books) {
+    public static void showAllBooks(ArrayList<Book> books) {
         for (Book book : books) {
-            book.ShowBook();
+            book.showBook();
             System.out.println();
         }
     }
-    public static boolean FindBook(ArrayList<Book> books, String BookName){
+    public static boolean findBook(ArrayList<Book> books, String BookName){
         for(Book book : books){
             if(book.name.equals(BookName)){
-                book.ShowBook();
+                book.showBook();
                 return true;
             }
         }
         System.out.println("Не знайдено книжки з такою назвою!");
         return false;
     }
-    public static boolean RemoveBook(ArrayList<Book> books, String Query){
+    public static boolean removeBook(ArrayList<Book> books, String Query){
         int index = 0;
         for(Book book : books){
             if(book.isbn.equals(Query)){
