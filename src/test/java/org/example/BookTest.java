@@ -1,10 +1,12 @@
 package org.example;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
 
 class BookTest {
 
-    @org.junit.jupiter.api.Test
+    @Test
     void showAllBooks() {
         ArrayList<Book> books = new ArrayList<>();
         books.add(new Book("111", "111", "111", "111"));
@@ -13,7 +15,7 @@ class BookTest {
         Book.ShowAllBooks(books);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void findBook() {
         ArrayList<Book> books = new ArrayList<>();
         books.add(new Book("111", "111", "111", "111"));
@@ -29,7 +31,7 @@ class BookTest {
         Book.FindBook(books, "111");
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void removeBook() {
         ArrayList<Book> books = new ArrayList<>();
         books.add(new Book("111", "111", "111", "111"));
