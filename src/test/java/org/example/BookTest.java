@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 class BookTest {
 
     @Test
@@ -21,14 +23,11 @@ class BookTest {
         books.add(new Book("111", "111", "111", "111"));
         books.add(new Book("222", "222", "222", "222"));
         books.add(new Book("333", "333", "333", "333"));
-        Book.showAllBooks(books);
-        System.out.println("Очікування: Помилка\n" +
-                "Результат: ");
+        boolean result = Book.findBook(books, "123");
+        assertFalse(result);
 
-        Book.findBook(books, "123");
-        System.out.println("Очікування: Знайдено\n" +
-                "Результат: ");
-        Book.findBook(books, "111");
+        result = Book.findBook(books, "111");
+        assertTrue(result);
     }
 
     @Test
@@ -37,12 +36,8 @@ class BookTest {
         books.add(new Book("111", "111", "111", "111"));
         books.add(new Book("222", "222", "222", "222"));
         books.add(new Book("333", "333", "333", "333"));
-        Book.removeBook(books, "123");
-        System.out.println("Очікування: Видалення\n" +
-                "Результат: ");
-        Book.removeBook(books, "111");
-        System.out.println("Очікування: Помилка\n" +
-                "Результат: ");
+        assertTrue(Book.removeBook(books, "111"));
+        assertFalse(Book.removeBook(books, "123"));
     }
 
 }
