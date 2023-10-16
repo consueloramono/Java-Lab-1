@@ -1,11 +1,10 @@
 package org.example;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main{
     public static void main(String[] args){
-        ArrayList<org.example.Book> books = new ArrayList<>();
+        BookLibrary bookLibrary = new BookLibrary();
         Scanner s = new Scanner(System.in);
         int query = 5;
         while(true){
@@ -32,7 +31,7 @@ public class Main{
                     String year = s.nextLine();
                     System.out.println("Введіть номер ISBN книги: ");
                     String isbn = s.nextLine();
-                    books.add(new Book(name, author, isbn, year));
+                    bookLibrary.addBook(new Book(name, author, isbn, year));
                     System.out.println("1. Додати наступну книгу.\n" +
                             "0. Повернутись до основного меню.");
                     while (true) {
@@ -48,15 +47,15 @@ public class Main{
                 } while (query != 0);
             }
             else if(query == 2){
-                Book.showAllBooks(books);
+                bookLibrary.showAllBooks();
             }
             else if(query == 3){
                 while(true) {
                     System.out.println("Введіть назву книжки: \n" +
                             "0. Покинути меню пошуку. ");
                     String QueryName = s.nextLine();
-                    if(QueryName.equals("0")) break;
-                    if(Book.findBook(books, QueryName)){
+                    if (QueryName.equals("0")) break;
+                    if (bookLibrary.findBook(QueryName)) {
                         break;
                     }
                 }
@@ -67,7 +66,7 @@ public class Main{
                             "0. Покинути меню видалення. ");
                     String QueryISBN = s.nextLine();
                     if(QueryISBN.equals("0")) break;
-                    if(Book.removeBook(books, QueryISBN)){
+                    if(bookLibrary.removeBook(QueryISBN)){
                         break;
                     }
                 }
